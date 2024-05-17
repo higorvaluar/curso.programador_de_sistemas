@@ -16,6 +16,10 @@ public class Moto {
         setLigado(false);
     }
 
+    public void imprimir() {
+        System.out.println("A moto da marca " + marca + " do modelo " + modelo + ", sua cor é " + cor + " e placa " + placa + ", do ano de " + ano + " vindo " + (ligado ? "ligada" : "desligada") + " de fábrica");
+    }
+
     public void setMarca(String marca){
         this.marca = marca;
     }
