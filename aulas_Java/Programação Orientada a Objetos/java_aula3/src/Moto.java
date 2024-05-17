@@ -4,26 +4,60 @@ public class Moto {
     public String cor;
     public String placa;
     public int ano;
-    public boolean ligado = false;
+    public boolean ligado;
+
+    // Único método diferente é o Construtor
+    public Moto(String marca, String modelo, String cor, String placa, int ano) {
+        setMarca(marca);
+        setModelo(modelo);
+        setCor(cor);
+        setPlaca(placa);
+        setAno(ano);
+        setLigado(false);
+    }
 
     public void setMarca(String marca){
         this.marca = marca;
     }
+    public String getMarca(){
+        return this.marca;
+    }
+
     public void setModelo(String modelo){
         this.modelo = modelo;
     }
+    public String getModelo(){
+        return this.modelo;
+    }
+
     public void setCor(String cor){
         this.cor = cor;
     }
+    public String getCor(){
+        return this.cor;
+    }
+
     public void setPlaca(String placa){
         this.placa = placa;
     }
+    public String getPlaca(){
+        return this.placa;
+    }
+
     public void setAno(int ano){
         this.ano = ano;
     }
+    public int getAno(){
+        return this.ano;
+    }
+
     public void setLigado(boolean ligado) {
         this.ligado = ligado;
     }
+    public boolean getLigado(){
+        return this.ligado;
+    }
+
 
     public void ligar(){
         if (ligado == false) {
