@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         Caneta caneta_1 = new Caneta();
-        caneta_1.marca = "Stabilo";
+        //carro_1.marca = "Stabilo"; <-- anterior
+        caneta_1.setMarca("Stabilo");
         caneta_1.modelo = "Point 88";
         caneta_1.cor = "Preto";
         caneta_1.funcao = "Escrever";

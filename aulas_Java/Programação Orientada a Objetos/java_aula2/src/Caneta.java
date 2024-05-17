@@ -8,6 +8,11 @@ public class Caneta {
     private boolean sumir = false;
     protected boolean roubado = false;
 
+    public void setMarca(String marca){
+        this.marca = marca; // O this vai dizer que o marca está vindo da classe
+        System.out.println("A marca foi definida!");
+    }
+
     void porTinta() {
         if (tinta == false) {
             tinta = true;
