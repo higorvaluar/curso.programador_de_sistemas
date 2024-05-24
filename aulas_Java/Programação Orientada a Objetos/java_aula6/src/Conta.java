@@ -1,13 +1,16 @@
 public class Conta implements Operacoes{
-    private int saldo;
+    private double saldo;
     private boolean bloqueada;
+    public Conta (double saldoInicial){
+        this.saldo = saldoInicial;
+    }
 
     public Conta(){
         this.saldo = 0;
         this.bloqueada = false;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
@@ -26,85 +29,34 @@ public class Conta implements Operacoes{
     public void desbloquear() {
         if (this.bloqueada == true) {
             this.bloqueada = false;
+            System.out.printf("Conta desbloqueada!");
         }
         else {
             System.out.println("A conta já está desbloqueada!");
         }
     }
 
-    public void sacar5() {
-        if (this.saldo < 5) {
-            System.out.println("Saldo insuficiente!");
+    public void sacar(double valor) {
+        if (this.bloqueada == true) {
+            System.out.println("Impossível, conta bloqueada!");
+        }
+        else if (valor > saldo) {
+            System.out.println("Saldo insuficiente");
         }
         else {
-            this.saldo -= 5;
-            System.out.println("Você sacou R$ 5,00");
+            saldo -= valor;
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
         }
     }
 
-    public void sacar10() {
-        if (this.saldo < 10) {
-            System.out.println("Saldo insuficiente!");
-        }
-        else {
-            this.saldo -= 10;
-            System.out.println("Você sacou R$ 10,00");
-        }
-    }
-
-    public void sacar20() {
-        if (this.saldo < 20) {
-            System.out.println("Saldo insuficiente!");
+    public void depositar(double valor) {
+        if (this.bloqueada == true) {
+            System.out.println("Impossível, conta bloqueada!");
         }
         else {
-            this.saldo -= 20;
-            System.out.println("Você sacou R$ 20,00");
+            saldo += valor;
+            System.out.println("O valor de R$ " + valor + " foi depositado com sucesso!");
         }
-    }
-
-    public void sacar50() {
-        if (this.saldo < 50) {
-            System.out.println("Saldo insuficiente!");
-        }
-        else {
-            this.saldo -= 50;
-            System.out.println("Você sacou R$ 50,00");
-        }
-    }
-
-    public void sacar100() {
-        if (this.saldo < 100) {
-            System.out.println("Saldo insuficiente!");
-        }
-        else {
-            this.saldo -= 100;
-            System.out.println("Você sacou R$ 100,00");
-        }
-    }
-
-    public void depositar5() {
-        this.saldo += 5;
-        System.out.println("Valor de R$ 5,00 depositado.");
-    }
-
-    public void depositar10() {
-        this.saldo += 10;
-        System.out.println("Valor de R$ 10,00 depositado.");
-    }
-
-    public void depositar20() {
-        this.saldo += 20;
-        System.out.println("Valor de R$ 20,00 depositado.");
-    }
-
-    public void depositar50() {
-        this.saldo += 50;
-        System.out.println("Valor de R$ 50,00 depositado.");
-    }
-
-    public void depositar100() {
-        this.saldo += 100;
-        System.out.println("Valor de R$ 100,00 depositado.");
     }
 
     public void consultar() {
@@ -112,8 +64,9 @@ public class Conta implements Operacoes{
     }
 
     public void bloquear() {
-        if (this.bloqueada == true) {
-            this.bloqueada = false;
+        if (this.bloqueada == false) {
+            this.bloqueada = true;
+            System.out.println("Conta bloqueada com sucesso!");
         }
         else{
             System.out.println("Está conta já está bloqueada!");

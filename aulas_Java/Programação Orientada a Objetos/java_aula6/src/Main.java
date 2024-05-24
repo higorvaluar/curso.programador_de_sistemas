@@ -8,11 +8,13 @@ public class Main {
         controle_1.status();*/
 
         Conta conta_1 = new Conta();
-        conta_1.sacar5();
-        conta_1.depositar5();
-        conta_1.depositar50();
-        conta_1.depositar20();
+        conta_1.desbloquear();
+        conta_1.sacar(25);
+        conta_1.depositar(60);
+        conta_1.consultar();
+        conta_1.sacar(50);
         conta_1.consultar();
         conta_1.bloquear();
+        conta_1.desbloquear();
     }
 }
