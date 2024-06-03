@@ -7,7 +7,7 @@ public class Conta implements Operacoes{
 
     public Conta(){
         this.saldo = 0;
-        this.bloqueada = false;
+        this.bloqueada = true;
     }
 
     public double getSaldo() {
