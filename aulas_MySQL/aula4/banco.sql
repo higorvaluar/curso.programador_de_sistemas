@@ -54,6 +54,10 @@ create table pessoas(
     
     -- Muda o nome da coluna
     alter table pessoas
+<<<<<<< HEAD
     change column nacionalidade pais_de_origem varchar(30);
     
     drop database banco;
+=======
+    change column nacionalidade pais_de_origem varchar(30);
+>>>>>>> eaf424ce8a7892e78982c8919cf9e71dbb9fe39f
